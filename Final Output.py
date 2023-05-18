@@ -3,26 +3,26 @@ from tkinter import messagebox
 
 class MyWindow:
     def __init__(self, win):
-        self.lbl1 = Label(win, text="Prelim")
+        self.lbl1 = Label(win, text="Prelim Grade")
         self.lbl1.place(x=100, y=50)
-        self.lbl2 = Label(win, text="Midterm")
+        self.lbl2 = Label(win, text="Midterm Grade")
         self.lbl2.place(x=100, y=100)
-        self.lbl3 = Label(win, text="Finals")
+        self.lbl3 = Label(win, text="Finals Grade")
         self.lbl3.place(x=100, y=150)
-        self.lbl4 = Label(win, text="Grade")
+        self.lbl4 = Label(win, text="Semestral Grade")
         self.lbl4.place(x=100, y=200)
-        self.txt1 = Entry(win, bd=1)
+        self.txt1 = Entry(win, bd=1, bg="Light blue")
         self.txt1.place(x=200, y=50)
-        self.txt2 = Entry(win, bd=1)
+        self.txt2 = Entry(win, bd=1, bg="Light blue")
         self.txt2.place(x=200, y=100)
-        self.txt3 = Entry(win, bd=1)
+        self.txt3 = Entry(win, bd=1, bg="Light blue")
         self.txt3.place(x=200, y=150)
-        self.txt4 = Entry(win, bd=1)
+        self.txt4 = Entry(win, bd=1, bg="Light blue")
         self.txt4.place(x=200, y=200)
-        self.btnclr = Button(win, text="Clear")
+        self.btnclr = Button(win, text="Clear", bg="blue", fg="white")
         self.btnclr.place(x=350, y=50)
         self.btnclr.bind('<Button-1>', self.clr)
-        self.btnadd = Button(win, text="Addition")
+        self.btnadd = Button(win, text="Enter",  bg="blue", fg="white")
         self.btnadd.place(x=350, y=100)
         self.btnadd.bind('<Button-1>', self.add)
 
@@ -37,7 +37,7 @@ class MyWindow:
         result = prelim + midterm + final
         self.txt4.insert(END, str(result))
 
-        if result >= 75:
+        if result >= 70:
             messagebox.showinfo("Result", "You passed!")
         else:
             messagebox.showinfo("Result", "You failed.")
